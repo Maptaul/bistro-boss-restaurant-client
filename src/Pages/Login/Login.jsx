@@ -7,6 +7,7 @@ import {
   validateCaptcha,
 } from "react-simple-captcha";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/SectionTitle/SocialLogin/SocialLogin";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
@@ -135,6 +136,7 @@ const Login = () => {
                 />
               </div>
             </form>
+            <SocialLogin />
             <p className="p-2 text-center">
               <small>
                 New Here ?{" "}

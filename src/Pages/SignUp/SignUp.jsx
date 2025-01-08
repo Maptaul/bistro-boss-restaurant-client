@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/SectionTitle/SocialLogin/SocialLogin";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { AuthContext } from "../../providers/AuthProvider";
 
@@ -159,6 +160,7 @@ const SignUp = () => {
                 />
               </div>
             </form>
+            <SocialLogin />
             <p className="p-2 text-center">
               <small>
                 Already have an account <Link to={"/login"}>Login</Link>
