@@ -1,0 +1,44 @@
+.mySwiper .swiper-button-prev,
+.mySwiper .swiper-button-next {
+  background-color: #f0f0f0;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.mySwiper .swiper-button-prev:hover,
+.mySwiper .swiper-button-next:hover {
+  background-color: #d4a373;
+  color: #fff;
+  border-color: #d4a373;
+}
+
+.mySwiper .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  gap: 10px;
+}
+
+.mySwiper .swiper-pagination-fraction {
+  display: flex;
+  align-items: center;
+}
+
+.mySwiper .swiper-pagination-current {
+  color: #000;
+}
+
+.mySwiper .swiper-pagination-total {
+  color: #000;
+}
