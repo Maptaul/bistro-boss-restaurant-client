@@ -43,7 +43,7 @@ const Cart = () => {
         </h2>
         <h2 className="text-2xl font-bold uppercase">
           Total Price : $ {totalPrice}
-        </h2>
+        </h2> 
         <button className="btn btn-warning">Pay</button>
       </div>
       <div className="overflow-x-auto bg-white">
