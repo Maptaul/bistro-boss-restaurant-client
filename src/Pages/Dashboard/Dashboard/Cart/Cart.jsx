@@ -37,7 +37,7 @@ const Cart = () => {
   return (
     <div className="p-2 space-y-10">
       <SectionTitle heading={"WANNA ADD MORE?"} subHeading={"My Cart"} />
-      <div className="md:flex items-center justify-between">
+      <div className="md:flex items-center justify-between bg-white">
         <h2 className="text-2xl font-bold uppercase">
           Total Orders : {cart.length}
         </h2>
@@ -46,8 +46,8 @@ const Cart = () => {
         </h2>
         <button className="btn btn-warning">Pay</button>
       </div>
-      <div className="overflow-x-auto ">
-        <table className="table w-full">
+      <div className="overflow-x-auto bg-white">
+        <table className="table w-full bg-white">
           {/* head */}
           <thead>
             <tr className="bg-[#D1A054] rounded-md">
