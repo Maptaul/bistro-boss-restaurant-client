@@ -13,13 +13,14 @@ import { IoWallet } from "react-icons/io5";
 import { MdEmail, MdRateReview } from "react-icons/md";
 import { TiThMenu } from "react-icons/ti";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../Hooks/useAdmin";
 import useCart from "../Hooks/useCart";
 
 const Dashboard = () => {
   const [cart] = useCart();
 
   //TODO: get isAdmin from the database
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
   return (
     <div className="flex">
       {/* dashboard side bar */}
