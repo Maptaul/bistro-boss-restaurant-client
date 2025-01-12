@@ -1,28 +1,39 @@
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
-import SectionTitle from "../../../components/SectionTitle/SectionTitle";
-import useMenu from "../../../Hooks/useMenu";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import SectionTitle from "../../../components/SectionTitle/SectionTitle";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import useMenu from "../../../Hooks/useMenu";
 
 const ManageItems = () => {
-  const [menu] = useMenu();
+  const [menu, , refetch] = useMenu();
+  const axiosSecure = useAxiosSecure();
   const handleDeleteItem = (item) => {
-        Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!"
-              }).then((result) => {
-                if (result.isConfirmed) {
-                //   Swal.fire({
-                //     title: "Deleted!",
-                //     text: "Your file has been deleted.",
-                //     icon: "success"
-                //   });
-                }
-              });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const res = await axiosSecure.delete(`/menu/${item._id}`);
+        // console.log(res.data);
+        if (res.data.deletedCount > 0) {
+          //refetch to update the ui
+          refetch();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${item.name} has been deleted`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      }
+    });
   };
   return (
     <div>
@@ -61,12 +72,11 @@ const ManageItems = () => {
                   <td>{item.name}</td>
                   <td>${item.price}</td>
                   <td>
-                    <button
-                      onClick={() => handleMakeAdmin(user)}
-                      className="btn btn-ghost  text-xl bg-[#D1A054] rounded-md"
-                    >
-                      <FaEdit />
-                    </button>
+                    <Link to={`/dashboard/updateItem/${item._id}`}>
+                      <button className="btn btn-ghost  text-xl bg-[#D1A054] rounded-md">
+                        <FaEdit />
+                      </button>
+                    </Link>
                   </td>
                   <td>
                     <button

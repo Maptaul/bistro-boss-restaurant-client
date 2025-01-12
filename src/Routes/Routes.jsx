@@ -4,6 +4,7 @@ import Dashboard from "../Layout/Dashboard";
 import MainLayout from "../Layout/MainLayout";
 import AllUsers from "../Pages/Dashboard/Dashboard/Cart/AllUsers/AllUsers";
 import Cart from "../Pages/Dashboard/Dashboard/Cart/Cart";
+import UpdateItem from "../Pages/Dashboard/UpdateItem/UpdateItem";
 import AddItems from "../Pages/Dashboard/addItems/AddItems";
 import ManageItems from "../Pages/Dashboard/manageItems/ManageItems";
 import Home from "../Pages/Home/Home/Home";
@@ -80,6 +81,16 @@ export const router = createBrowserRouter([
             <ManageItems />
           </AdminRoute>
         ),
+      },
+      {
+        path: "updateItem/:id",
+        element: (
+          <AdminRoute>
+            <UpdateItem></UpdateItem>
+          </AdminRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/menu/${params.id}`),
       },
       {
         path: "users",
