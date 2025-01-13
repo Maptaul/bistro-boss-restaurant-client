@@ -62,7 +62,7 @@ const CheckoutForm = () => {
       <button
         className="btn btn-sm btn-primary mt-10"
         type="submit"
-        disabled={!stripe}
+        disabled={!stripe || !clientSecret}
       >
         Pay
       </button>
