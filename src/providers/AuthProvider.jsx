@@ -82,7 +82,9 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>
+    {children}
+    </AuthContext.Provider>
   );
 };
 
