@@ -20,7 +20,7 @@ const Menu = () => {
   //   const popular = menu.filter((item) => item.category === "popular");
 
   return (
-    <div>
+    <div className="mb-10">
       <Helmet>
         <title>BISTRO BOSS | Menu</title>
       </Helmet>

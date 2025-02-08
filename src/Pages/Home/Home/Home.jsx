@@ -8,7 +8,7 @@ import Testimonials from "../Testimonials/Testimonials";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Helmet>
         <title>BISTRO BOSS | Home</title>
       </Helmet>

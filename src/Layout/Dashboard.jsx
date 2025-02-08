@@ -22,7 +22,7 @@ const Dashboard = () => {
   //TODO: get isAdmin from the database
   const [isAdmin] = useAdmin();
   return (
-    <div className="flex">
+    <div className="flex max-w-screen-xl mx-auto px-4">
       {/* dashboard side bar */}
       <div className="w-72 min-h-screen bg-[#D1A054]">
         <div className="p-2 mb-10 mt-5">

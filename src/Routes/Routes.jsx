@@ -11,6 +11,7 @@ import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 import AddItems from "../Pages/Dashboard/addItems/AddItems";
 import ManageItems from "../Pages/Dashboard/manageItems/ManageItems";
 import PaymentHistory from "../Pages/Dashboard/paymentHistory/PaymentHistory";
+import ErrorPage from "../Pages/Error/ErrorPage";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import Menu from "../Pages/Menu/Menu/Menu";
@@ -114,7 +115,7 @@ export const router = createBrowserRouter([
           </AdminRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/menu/${params.id}`),
+          fetch(`https://y-nine-tawny.vercel.app/menu/${params.id}`),
       },
       {
         path: "users",
@@ -125,5 +126,9 @@ export const router = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);

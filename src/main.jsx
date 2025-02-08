@@ -15,7 +15,7 @@ createRoot(document.getElementById("root")).render(
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
         <HelmetProvider>
-          <div className="max-w-screen-xl mx-auto px-4">
+          <div className="bg-gray-100">
             <RouterProvider router={router} />
           </div>
         </HelmetProvider>
