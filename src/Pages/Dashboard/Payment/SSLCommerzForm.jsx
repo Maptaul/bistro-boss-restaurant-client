@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../../Hooks/useAuth";
@@ -24,8 +23,8 @@ const SSLCommerzForm = () => {
       menuItemIds: cart.map((item) => item.menuId),
       status: "pending",
     };
-    const response = await axios.post(
-      "http://localhost:5000/create-ssl-payment",
+    const response = await axiosSecure.post(
+      "https://y-nine-tawny.vercel.app/create-ssl-payment",
       payment
     );
     if (response.data?.gateWayUrl) {
@@ -33,6 +32,7 @@ const SSLCommerzForm = () => {
     }
     console.log("response", response);
   };
+
   return (
     <div className="border p-6 rounded-lg shadow-md bg-white max-w-md mx-auto">
       <h2 className="text-center text-2xl font-semibold text-gray-700 mb-4">
